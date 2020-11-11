@@ -1,0 +1,10 @@
+{
+  "name": "library-express-api",
+  "version": "1.0.0",
+  "description": "Backend for Library Project with Pacifica Prime",
+  "main": "server.js",
+  "repository": "https://github.com/L0N/crispy-succotash.git",
+  "author": "Frank Manue Jr <fpj.manue.jnr@hotmail.com>",
+  "license": "MIT",
+  "private": true
+}
