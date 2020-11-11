@@ -1,0 +1,20 @@
+const mongoose = require('mongoose')
+
+const BookModel = mongoose.model('BookModel', newSchema({
+    Title : {
+        type: String,
+        require: true
+    },
+    Author: {
+        type: String,
+        require: true
+    },
+    PublishDate: {
+        type: Date,
+        require: false
+    },
+    Synopsis: {
+        type: String,
+        require: false
+    }
+}))
