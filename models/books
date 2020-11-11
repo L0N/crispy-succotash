@@ -18,3 +18,5 @@ const BookModel = mongoose.model('BookModel', newSchema({
         require: false
     }
 }))
+
+model.exports = mongoose.model('Book', BookModel)
