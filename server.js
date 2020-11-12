@@ -1,9 +1,11 @@
-const express = require('express')
-const cors = require('cors')
+const express = require('express');
+const cors = require('cors');
+const dotenv = require('dotenv');
+const mongoose = require('mongoose');
 
-const app = express()
+const app = express();
 
-const port = 3330
+const port = 3330;
 
 const records = [
     {
@@ -36,6 +38,16 @@ const records = [
     }
 ]
 
+dotenv.config()
+const url = process.env.DB;
+
+//connect db
+mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true});
+const db = mongoose.connection
+db.on('error', (error)=> {console.error(error)});
+db.once('open', () => {console.log("Connected to DB")})
+
+// middleware
 app.use(cors())
 app.use(express.json())
 
