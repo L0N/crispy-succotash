@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
-const dotenv = require('dotenv');
 const mongoose = require('mongoose');
+require('dotenv').config();
 
 const app = express();
 
@@ -38,7 +38,6 @@ const records = [
     }
 ]
 
-dotenv.config()
 const url = process.env.DB;
 
 //connect db
@@ -50,6 +49,8 @@ db.once('open', () => {console.log("Connected to DB")})
 // middleware
 app.use(cors())
 app.use(express.json())
+
+const subscriberRoutes = require('./routes/books')
 
 app.get('/', (req, res) => {
     res.send("Hey, the API is working")
