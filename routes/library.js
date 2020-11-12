@@ -3,7 +3,7 @@ const router = express.Router()
 
 // Getting all
 router.get('/', (req, res) => {
-
+    res.send("Hello reader")
 })
 
 // Getting one
@@ -17,12 +17,12 @@ router.post('/', (req, res) => {
 })
 
 // Updating one
-router.patch('/', (req, res) => {
+router.patch('/:id', (req, res) => {
 
 })
 
 // Deleting one
-router.patch('/', (req, res) => {
+router.patch('/:id', (req, res) => {
 
 })
 
