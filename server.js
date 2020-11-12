@@ -50,7 +50,8 @@ db.once('open', () => {console.log("Connected to DB")})
 app.use(cors())
 app.use(express.json())
 
-const subscriberRoutes = require('./routes/books')
+const libraryRoutes = require('./routes/library');
+app.use('/library', libraryRoutes)
 
 app.get('/', (req, res) => {
     res.send("Hey, the API is working")
